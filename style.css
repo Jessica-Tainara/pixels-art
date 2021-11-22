@@ -18,3 +18,15 @@ header {
     margin-right: auto;
     text-align: center;
 }
+#pixel-board {
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+    height: 250px;
+}
+.pixel {
+    width: 20%;
+    height: 20%;
+    float: left;
+    background-color: white;
+}
