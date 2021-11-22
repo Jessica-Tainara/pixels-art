@@ -50,6 +50,12 @@ function boardsize () {
         if (number===''){
             window.alert('Board inválido!' )
         }
+        else if (number<=5){
+            number=5
+        }
+        else if(number>=50){
+            number =50
+        }
          let tamanho =42 * number
          let quadro = document.getElementById('pixel-board')
          document.body.removeChild(quadro)
