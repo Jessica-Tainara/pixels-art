@@ -1,6 +1,10 @@
 window.onload = function () {
-  const black = document.getElementsByClassName('color');
-  black[0].className = 'color selected';
+  let colors = document.getElementsByClassName('color');
+  for (let i = 1; i < colors.length; i += 1){
+      colors[i]. setAttribute("style","background-color: rgb("+ Math.random()*255 +', ' +Math.random()*255+', '+Math.random()*255+ ')')
+  }
+  colors[0].className = 'color selected';
+
 };
 function seleciona() {
   const paleta = document.getElementsByClassName('color');
