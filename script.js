@@ -26,7 +26,7 @@ function colore() {
 colore();
 function limpa () {
    const button = document.getElementById('clear-board');
-   const blocos = document.getElementsByClassName('pixel');
+   let blocos = document.getElementsByClassName('pixel');
     button.addEventListener('click', function () {
         for (let i=0; i<blocos.length; i+=1){
             blocos[i].style.backgroundColor = 'white';
@@ -34,3 +34,38 @@ function limpa () {
     });
 }
 limpa()
+function boardsize () {
+    let caixa = document.getElementById('board-size');
+    let botao= document.getElementById('generate-board')
+    botao.addEventListener('click',function(){
+         let number = caixa.value
+        if (number===''){
+            window.alert('Board inválido!' )
+        }
+     })
+    caixa.addEventListener('input',function () {
+        botao.addEventListener('click',function(){
+        let pixels = document.querySelectorAll('.pixel')
+         let number = caixa.value
+        if (number===''){
+            window.alert('Board inválido!' )
+        }
+         let tamanho =42 * number
+         let quadro = document.getElementById('pixel-board')
+         document.body.removeChild(quadro)
+         quadro = document.createElement('div')
+         quadro.id = 'pixel-board'
+         document.body.appendChild(quadro)
+         quadro. setAttribute("style","width:" +tamanho +"px");
+         // usei este link para saber como alterar o width da forma que fiz acima :https://qastack.com.br/programming/10118172/setting-div-width-and-height-in-javascript
+         
+         for ( let key = 0; key <number*number ; key +=1){
+            let pixel = document.createElement('div')
+            pixel.className = 'pixel'
+            quadro.appendChild(pixel)
+         }
+        colore ()
+      })
+    })
+  }
+  boardsize();
