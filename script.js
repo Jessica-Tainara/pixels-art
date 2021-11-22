@@ -24,3 +24,13 @@ function colore() {
   }
 }
 colore();
+function limpa () {
+   const button = document.getElementById('clear-board');
+   const blocos = document.getElementsByClassName('pixel');
+    button.addEventListener('click', function () {
+        for (let i=0; i<blocos.length; i+=1){
+            blocos[i].style.backgroundColor = 'white';
+        }
+    });
+}
+limpa()
